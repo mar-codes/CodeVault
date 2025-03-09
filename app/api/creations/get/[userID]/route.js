@@ -1,11 +1,11 @@
 import { NextResponse } from 'next/server';
-import dbConnect from '../../../../../lib/dbConnect';
+import connectDB from '../../../../../lib/connectDB';
 import Creation from '../../../../../schemas/Creations';
 import User from '../../../../../schemas/User';
 
 export async function GET(request, { params }) {
     try {
-        await dbConnect();
+        await connectDB();
         const { userID } = params;
         
         if (!userID) {
