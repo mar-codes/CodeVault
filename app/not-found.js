@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 
 export default function NotFound() {
     const [mounted, setMounted] = useState(false);
-    
+
     useEffect(() => {
         setMounted(true);
     }, []);
@@ -16,13 +16,13 @@ export default function NotFound() {
             <div className="absolute inset-0 overflow-hidden opacity-10">
                 <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-blue-500 rounded-full filter blur-[120px]"></div>
             </div>
-            
+
             <div className={`max-w-lg w-full backdrop-blur-sm bg-gray-900/40 rounded-2xl border border-gray-700/20 p-8 shadow-xl transition-all duration-700 ${mounted ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-8'}`}>
                 <div className="text-center space-y-6">
                     <div className="inline-flex items-center justify-center p-4 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl shadow-lg shadow-blue-500/10 mx-auto transition-all duration-300 hover:shadow-blue-500/20 hover:scale-105">
                         <FileQuestion className="h-10 w-10 text-white" />
                     </div>
-                    
+
                     <div>
                         <h1 className="text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-violet-400 to-indigo-400 tracking-tighter">
                             404
@@ -33,7 +33,7 @@ export default function NotFound() {
                     </div>
 
                     <p className="text-gray-300 max-w-sm mx-auto mt-2 leading-relaxed">
-                        The page you're looking for doesn't exist or has been moved to another location.
+                        The page you&rsquo;re looking for doesn&rsquo;t exist or has been moved to another location.
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-5 justify-center mt-6">
