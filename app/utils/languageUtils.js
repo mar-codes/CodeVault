@@ -17,11 +17,25 @@ export function detectLanguage(code) {
     swift: /(import Foundation|class|struct|var|let|func|guard)/,
   };
 
+  const scores = {};
   for (const [language, pattern] of Object.entries(languagePatterns)) {
-    if (pattern.test(code)) {
-      return language;
+    let flags = pattern.flags;
+    if (!flags.includes('g')) {
+      flags += 'g';
+    }
+    const modifiedPattern = new RegExp(pattern.source, flags);
+    const matches = code.match(modifiedPattern);
+    scores[language] = matches ? matches.length : 0;
+  }
+
+  let detectedLanguage = 'plaintext';
+  let maxCount = 0;
+  for (const [language, count] of Object.entries(scores)) {
+    if (count > maxCount) {
+      maxCount = count;
+      detectedLanguage = language;
     }
   }
 
-  return 'plaintext';
+  return detectedLanguage;
 }
