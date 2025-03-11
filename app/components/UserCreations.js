@@ -136,7 +136,7 @@ export default function UserCreationsContent({ userId }) {
                             <User className="w-10 h-10 text-gray-400" />
                         </div>
                         <h2 className="text-2xl font-bold text-white mb-2">Profile Not Found</h2>
-                        <p className="text-gray-400 mb-6">This user profile doesn't exist or has been removed.</p>
+                        <p className="text-gray-400 mb-6">This user profile doesn&apost exist or has been removed.</p>
                         <Link
                             href="/auth/user/profile/dashboard"
                             className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 rounded-xl transition-all duration-300 text-white font-medium shadow-lg shadow-blue-900/20"
