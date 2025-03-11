@@ -1,0 +1,31 @@
+.Toastify__toast {
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(75, 85, 99, 0.3);
+}
+
+.Toastify__toast-body {
+  font-family: inherit;
+}
+
+.Toastify__progress-bar {
+  background: linear-gradient(to right, #3b82f6, #6366f1);
+}
+
+/* Custom animations */
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 200ms ease-in;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 200ms ease-out;
+}
