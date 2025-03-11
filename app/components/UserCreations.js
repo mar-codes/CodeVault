@@ -320,7 +320,7 @@ export default function UserCreationsContent({ userId }) {
                                     </div>
                                     <h2 className="text-2xl font-semibold text-gray-200 mb-3">No Snippets Found</h2>
                                     <p className="text-gray-500 max-w-md mx-auto mb-6">
-                                        {searchTerm ? 'No creation match your search criteria. Try using different keywords.' : 'This user has not created any code creations yet.'}
+                                        {searchTerm ? 'No creation match your search criteria. Try using different keywords.' : 'This user hasn&apos;t created any code creations yet.'}
                                     </p>
                                     {searchTerm && (
                                         <button
