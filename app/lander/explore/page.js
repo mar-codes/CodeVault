@@ -277,6 +277,11 @@ export default function Explore() {
   };
 
   const filteredCreations = creations.filter(creation => {
+    // First filter out unlisted creations that don't belong to the current user
+    if (creation.privacy === 'unlisted' && (!userId || creation.userId !== userId)) {
+      return false;
+    }
+    
     const searchMatch =
       creation.title?.toLowerCase().includes(filters.search.toLowerCase()) ||
       creation.description?.toLowerCase().includes(filters.search.toLowerCase()) ||
@@ -284,7 +289,11 @@ export default function Explore() {
 
     const authorMatch = !filters.author || creation.author?.toLowerCase().includes(filters.author.toLowerCase());
     const languageMatch = !filters.language || creation.language === filters.language;
-    const visibilityMatch = filters.visibility === 'all' || creation.privacy === filters.visibility;
+    
+    // For visibility, show 'all' or specific type that user has access to
+    const visibilityMatch = filters.visibility === 'all' || 
+      (filters.visibility === creation.privacy && 
+       (creation.privacy === 'public' || (creation.privacy === 'unlisted' && creation.userId === userId)));
 
     const timeframeMatch = () => {
       if (filters.timeframe === 'all') return true;
