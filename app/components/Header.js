@@ -82,7 +82,7 @@ export default function Header({ user, className }) {
           <div className="flex items-center gap-4">
             {isAdmin && (
               <Link
-                href="/admin/dashboard"
+                href="/auth/user/admin/dashboard"
                 className="hidden md:flex items-center gap-2 px-3 py-1.5 rounded-md bg-red-500/10 border border-red-500/20 hover:bg-red-500/20 hover:border-red-500/30 transition-all duration-200"
               >
                 <span className="text-xs font-medium text-red-400">Admin</span>
